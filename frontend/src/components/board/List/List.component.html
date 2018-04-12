@@ -4,6 +4,9 @@
     <thead>
       <tr>
         <th scope="col">No</th>
+        <!-- STEP1 **** START!!!! just image upload without other thing -->
+        <th scope="col">섬네일</th>
+        <!-- STEP1 **** END!!!! just image upload without other thing -->
         <th scope="col" class="col-sm-6">제목</th>
         <th scope="col">작성일</th>
         <th scope="col">작성자</th>
@@ -15,6 +18,9 @@
 
 
             <th scope="row">{{board.no}}</th>
+            <!-- STEP1 **** START!!!! just image upload without other thing -->
+            <th scope="row"><img :src=board.imagePreview class="image-thumbnail"/></th>
+            <!-- STEP1 **** END!!!! just image upload without other thing -->
             <td><router-link :to="{ name: 'view', params: { no: board.no }}">{{board.title}}</router-link></td>
             <td>{{ board.registedAt }}</td>
             <td>{{board.register}}</td>

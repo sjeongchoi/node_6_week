@@ -80,6 +80,13 @@ router.post('/', (req, res) => {
             board.contents = reqBody.contents;
             board.register = reqBody.register;
             board.registedAt = reqBody.registedAt;
+            //  STEP1 **** START!!! just image upload without other thing ---------
+            board.imageData = reqBody.image;
+            const imageInfo = reqBody.imageInfo;
+            board.imageContentType = imageInfo.imageFormat;
+            board.imageName = imageInfo.imageName;
+            board.imageSize = imageInfo.imageSize;
+            //  STEP1 **** END!!! just image upload without other thing ---------
 
             Board.saveBoard(board)
                 .then(result => {
@@ -104,6 +111,13 @@ router.put('/', (req, res) => {
     let updateBoard = {};
     updateBoard.title = reqBody.title;
     updateBoard.contents = reqBody.contents;
+    //  STEP1 **** START!!! just image upload without other thing ---------
+    updateBoard.imageData = reqBody.imageData;
+    const imageInfo = reqBody.imageInfo;
+    updateBoard.imageContentType = imageInfo.imageFormat;
+    updateBoard.imageName = imageInfo.imageName;
+    updateBoard.imageSize = imageInfo.imageSize;
+    //  STEP1 **** END!!! just image upload without other thing ---------
 
     Board.updateBoard(no ,  updateBoard)
         .then(result=>{

@@ -1,10 +1,17 @@
+// STEP1 **** START!!!! just image upload without other thing
+import image from './../../../assets/logo.png'
+// STEP1 **** END!!!! just image upload without other thing
 export default {
   name: 'list',
   components: {},
   props: [],
   data() {
     return {
-      boards: {}
+      boards: {},
+      // STEP1 **** START!!!! just image upload without other thing
+      defaultImage: image,
+      // STEP1 **** END!!!! just image upload without other thing
+
     }
   },
   computed: {},
@@ -23,6 +30,9 @@ export default {
           second = addZero(date.getSeconds());
         response.data[i].registedAt = [year, month, day].join("-")
           + " " + [hour, minute, second].join(":");
+        // STEP1 **** START!!!! just image upload without other thing
+        response.data[i].imagePreview = !response.data[i].imageData ? this.defaultImage : response.data[i].imageData
+        // STEP1 **** END!!!! just image upload without other thing
       }
       this.boards = response.data;
 

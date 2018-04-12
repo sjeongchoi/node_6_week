@@ -15,6 +15,17 @@
           <textarea class="form-control" id="contents" v-model="board.contents"></textarea>
         </div>
       </div>
+      <!-- STEP1 **** START!!!! just image upload without other thing -->
+      <div class="form-group">
+        <label class="control-label col-sm-2" for="images">이미지</label>
+        <div class="col-sm-10">
+          <div v-if="selectedImage">
+            <img :src="selectedImage" class="form-control basic-image"/>
+          </div>
+          <input type="file" class="form-control" id="image" @change="onFileChange">
+        </div>        
+      </div>
+      <!--  STEP1 **** END!!!! just image upload without other thing -->
       <div class="form-group">
         <div class="col-sm-offset-2 col-sm-10">
           <button type="button" class="btn btn-default" @click.prevent="goList">목록</button>

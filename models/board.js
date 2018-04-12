@@ -6,7 +6,13 @@ let boardSchema = new Schema({
     title : { type:String , trim : true , required : true} ,
     contents : {type : String , trim: true},
     registedAt: { type: Date, default: Date.now  },
-    register : {type : String , trim : true}
+    register : {type : String , trim : true},
+    //  STEP1 **** START!!! just image upload without other thing ---------
+    imageData: {type : String},
+    imageContentType: {type: String},
+    imageName: {type: String},
+    imageSize: {type: Number}
+    //  STEP1 **** END!!! just image upload without other thing ---------
 });
 
 /*

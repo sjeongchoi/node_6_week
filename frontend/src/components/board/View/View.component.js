@@ -1,14 +1,19 @@
+// STEP1 **** START!!!! just image upload without other thing
+import image from './../../../assets/logo.png'
+// STEP1 **** END!!!! just image upload without other thing
 export default {
   name: 'view',
   components: {},
   props: [],
   data () {
     return {
-      board : {}
+      board : {},
+      // STEP1 **** START!!!! just image upload without other thing
+      defaultImage: image,
+      // STEP1 **** END!!!! just image upload without other thing
     }
   },
   computed: {
-
   },
   created: function () {
      let no = this.$route.params.no;
@@ -17,6 +22,9 @@ export default {
       return;
      }
      this.$http.get(`/api/board/view/${no}`).then((response) => {
+      // STEP1 **** START!!!! just image upload without other thing
+      response.data.imageData = !response.data.imageData ? this.defaultImage : response.data.imageData
+      // STEP1 **** END!!!! just image upload without other thing
        this.board = response.data;
        console.log(response.data);
      }).catch((err) => {
