@@ -12,6 +12,9 @@ const index = require('./routes/index');
 const users = require('./routes/users');
 const movies = require('./routes/movies');
 const board = require('./routes/board');
+// STEP 2!!!!!! START
+const file = require('./routes/file')
+// STEP 2!!!!!! END
 
 const app = express();
 
@@ -32,6 +35,9 @@ app.use('/', index);
 app.use('/api/movie', movies);
 app.use('/api/user', users);
 app.use('/api/board', board);
+// STEP 2!!!!!! START
+app.use('/api/file', file);
+// STEP 2!!!!!! END
 
 app.set('port', (process.env.PORT || 3000));
 

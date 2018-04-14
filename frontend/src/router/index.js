@@ -4,6 +4,9 @@ import mains from './main'
 import members from './member'
 import board from './board'
 import VueSession from 'vue-session'
+// STEP 2!!!!!! START
+import file from './file'
+// STEP 2!!!!!! END
 
 Vue.use(VueSession)
 
@@ -18,6 +21,9 @@ const routerExcute = (router) => {
 routerExcute(mains)
 routerExcute(members)
 routerExcute(board)
+// STEP 2!!!!!! START
+routerExcute(file)
+// STEP 2!!!!!! END
 
 Vue.use(Router)
 
